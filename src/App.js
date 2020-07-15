@@ -35,9 +35,10 @@ function Home() {
 }
 
 function Info() {
+  const {text} = Process;
   return (
-      <div className="background"><h2>Products Info</h2>
-      
+      <div className="background"><h2>How Our Products are made</h2>
+      <p>{text}</p>      
       </div>
   );
 }
@@ -61,7 +62,7 @@ function ShoeInfo() {
     return <div><h1>Out of Stock</h1></div>
   }
   const {name,img,info}= shoe;
-  return <div className="background" ><h2>{name} Details</h2><img src={img} alt={value} /><p>{info}</p></div>
+  return <div className="background" ><h2>{name} Details</h2><div ><img src={img} alt={value} /></div><p >{info}</p></div>
 }
 
 const shoes = {
@@ -96,4 +97,18 @@ const shoes = {
          <br/><br/>Colour Shown: Grey/White<br/>Style: CW1777-001<br/>Price : 4000$</div>
   },
 
+}
+
+const Process = {
+  text:
+  <div>Almost all Nike shoes are manufactured outside of the United States. The leading manufacturer of
+     Nike shoes is China and Vietnam each accounting for 36% of the total manufactured world wide.
+      Indonesia accounts for 22% and Thailand for 6% of the Nike shoes that are being produced world wide.
+      There are 785 contract factories with more then 1 million workers manufacturing more then 500,000 
+      different products. To make the shoe the worker first cuts all the material in the shapes and forms
+      they need to be in, they then sew the pieces together on the upper section above the sole.
+      The workers then prepare the sole also called stock fitting, followed by preparing the attachment
+      of upper to the sole also know as lasting. Then the worker attaches and shapes the bottom heel
+      to its final form this process is called heeling. The finishing touches are made and any
+      necessary accessories are then attached in the process called treeing.</div>
 }
