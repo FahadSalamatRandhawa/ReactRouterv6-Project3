@@ -41,6 +41,8 @@
 }
 
 
-left {
-  border-left: 2cm;
+.left {
+  border-left: 2in;
+  text-rendering: geometricPrecision;
+  text-decoration: blueviolet;
 }

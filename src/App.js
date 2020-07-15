@@ -10,9 +10,9 @@ export default function App() {
     <div className="naviga" >
     <Router >
 
-      <nav>
-        <Link to="/">Home  </Link>
-        <Link to="/Info" className="left">Info</Link>
+      <nav className="left">
+        <Link to="/" className="left" >Home  </Link>
+        <Link to="/Info" className="left" >Info</Link>
       </nav>
 
       <Routes>
@@ -36,7 +36,9 @@ function Home() {
 
 function Info() {
   return (
-      <div className="background"><h2>Products Info</h2></div>
+      <div className="background"><h2>Products Info</h2>
+      
+      </div>
   );
 }
 
@@ -58,25 +60,40 @@ function ShoeInfo() {
   if(!shoe) {
     return <div><h1>Out of Stock</h1></div>
   }
-  const {name,img}= shoe;
-  return <div className="background" ><h2>{name} Details</h2><img src={img} alt={value} /></div>
+  const {name,img,info}= shoe;
+  return <div className="background" ><h2>{name} Details</h2><img src={img} alt={value} /><p>{info}</p></div>
 }
 
 const shoes = {
   "Black-Lagoon": {
-    name: "BlackLagoon",
+    name: "Black Lagoon",
     img:
-      "https://secure-images.nike.com/is/image/DotCom/CV3042_001_A_PREM?SNKRS_COVER_WD$&align=0,1"
+      "https://secure-images.nike.com/is/image/DotCom/CV3042_001_A_PREM?SNKRS_COVER_WD$&align=0,1",
+      info:
+      <div>Reinvigorate your stride with the Nike Black Lagoon Delivering the same fit and feel that
+         runners love, the shoe has an all-new forefoot cushioning unit and foam for maximum 
+         responsiveness. The result is a durable, lightweight trainer designed for everyday running.
+         <br/><br/>Colour Shown: Black<br/>Style: BQ9646-001<br/>Price : 3000$</div>
   },
   "Light-sky": {
-    name: "LightSky",
+    name: "Light Sky",
     img:
-      "https://secure-images.nike.com/is/image/DotCom/CT8532_104_A_PREM?SNKRS_COVER_WD$&align=0,1"
+      "https://secure-images.nike.com/is/image/DotCom/CT8532_104_A_PREM?SNKRS_COVER_WD$&align=0,1",
+      info:
+      <div>The Nike Light Sky (aka) Flyknit is designed to keep you on the run. More foam and 
+        improved upper details provide a secure and cushioned feel. Lace up and feel the potential
+         as you hit the road.
+         <br/><br/>Colour Shown: White/LightBlue<br/>Style: BRT646-001<br/>Price : 2600$</div>
   },
   "Grey-Gods": {
-    name: "GreyGods",
+    name: "Grey Gods",
     img:
-      "https://secure-images.nike.com/is/image/DotCom/CK6637_104_A_PREM?SNKRS_COVER_WD$&align=0,1"
+      "https://secure-images.nike.com/is/image/DotCom/CK6637_104_A_PREM?SNKRS_COVER_WD$&align=0,1",
+      info:
+      <div>The Nike React Miler gives you trusted stability for miles with athlete-informed performance.
+         Made for dependability on your long runs,
+         its intuitive design offers a locked-in fit and a durable feel.
+         <br/><br/>Colour Shown: Grey/White<br/>Style: CW1777-001<br/>Price : 4000$</div>
   },
 
 }
